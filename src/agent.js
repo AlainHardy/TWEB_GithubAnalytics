@@ -30,6 +30,7 @@ class Agent {
         const targetUrl = `https://api.github.com/repos/${owner}/${repo}/commits`;
         let commits = [];
         function fetchAndProcessPage(pageUrl, credentials) {
+            console.log(pageUrl);
             request
                 .get(pageUrl)
                 .auth(credentials.username, credentials.token)
@@ -37,11 +38,10 @@ class Agent {
                     //commits = commits.concat(res.body);
                     var i;
                     for(i = 0; i < res.body.length; i++) {
-                        let tempArray = [];
-                        
-                        tempArray.push({'date':res.body[i].commit.committer.date});
-                        tempArray.push({'commiter': {'id':res.body[i].committer.id,'name':res.body[i].commit.committer.name}});
-                        commits.push(tempArray);
+                        let tempArray = [{date : new Date(res.body[i].commit.committer.date),
+                            committer: {login : res.body[i].committer.login, name : res.body[i].commit.committer.name}
+                        }];
+                        commits = commits.concat(tempArray);
                     }
 
                     if(res.links.next) {

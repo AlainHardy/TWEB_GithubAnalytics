@@ -55,45 +55,47 @@ var myLineChart = new Chart(ctx, {
 // -- Bar Chart Example
 var ctx = document.getElementById("myBarChart");
 var myLineChart = new Chart(ctx, {
-  type: 'bar',
-  data: {
-    labels: ["January", "February", "March", "April", "May", "June"],
-    datasets: [{
-      label: "Revenue",
-      backgroundColor: "rgba(2,117,216,1)",
-      borderColor: "rgba(2,117,216,1)",
-      data: [4215, 5312, 6251, 7841, 9821, 14984],
-    }],
-  },
-  options: {
-    scales: {
-      xAxes: [{
-        time: {
-          unit: 'month'
-        },
-        gridLines: {
-          display: false
-        },
-        ticks: {
-          maxTicksLimit: 6
-        }
-      }],
-      yAxes: [{
-        ticks: {
-          min: 0,
-          max: 15000,
-          maxTicksLimit: 5
-        },
-        gridLines: {
-          display: true
-        }
-      }],
-    },
-    legend: {
-      display: false
-    }
-  }
+type: 'bar',
+data: {
+	//labels: ["January", "February", "March", "April", "May", "June"],
+	lables: [2016-3,2016-4,2016-5,2016-6,2016-7,2016-8,2016-9,2016-10,2016-11,2016-12,2017-2,2017-3,2017-4,2017-5,2017-6,2017-7,2017-8,2017-9,2017-10],
+	datasets: [{
+	label: "Number of commits",
+	backgroundColor: "rgba(2,117,216,1)",
+	borderColor: "rgba(2,117,216,1)",
+	data: [28,6,17,17,17,18,14,5,2,9,5,3,35,26,13,18,13,25,5],
+	}],
+},
+options: {
+	scales: {
+	xAxes: [{
+		time: {
+		unit: 'month'
+		},
+		gridLines: {
+		display: false
+		},
+		ticks: {
+		maxTicksLimit: 6
+		}
+	}],
+	yAxes: [{
+		ticks: {
+		min: 0,
+		max: 100,
+		maxTicksLimit: 5
+		},
+		gridLines: {
+		display: true
+		}
+	}],
+	},
+	legend: {
+	display: false
+	}
+}
 });
+
 // -- Pie Chart Example
 var ctx = document.getElementById("myPieChart");
 var myPieChart = new Chart(ctx, {
