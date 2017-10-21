@@ -1,0 +1,7 @@
+version: '2'
+services:
+  nodejs:
+    build: ../images/nodejs
+    ports:
+     - "3000:3000"
+     - "4848:4848"
