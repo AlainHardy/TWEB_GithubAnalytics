@@ -26,8 +26,8 @@ class Agent {
         fetchAndProcessPage(targetUrl, this.credentials);
     }
     //*
-    fetchAndProcessAllComits(owner, repo, allCommitsAreAvailable) {
-        const targetUrl = `https://api.github.com/repos/${owner}/${repo}/commits`;
+    fetchAndProcessAllComits(url, allCommitsAreAvailable) {
+        const targetUrl = `https://api.github.com/repos/${url}/commits`;
         let commits = [];
         function fetchAndProcessPage(pageUrl, credentials) {
             console.log(pageUrl);

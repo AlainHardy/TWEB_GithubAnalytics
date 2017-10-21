@@ -35,12 +35,12 @@ describe('agent', () => {
         const owner = 'spring-projects';
         const repo = 'spring-kafka';
         const agent = new Agent(credentials);
-        agent.fetchAndProcessAllComits(owner, repo, (err, abc) => {
+        agent.fetchAndProcessAllComits(owner+"/"+repo, (err, abc) => {
             var test = Chart(abc);
             test.should.not.be.empty;
             var x;
-            for(x in test.committerCount) {
-                console.log(test.committerCount[x].name);
+            for(x in test.committer) {
+                console.log(test.committer[x].name);
             }
 
             done();
