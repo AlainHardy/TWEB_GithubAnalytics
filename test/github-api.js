@@ -1,4 +1,4 @@
-const chai = require('chai');
+/*const chai = require('chai');
 const request = require('superagent');
 const { username, token } = require('../github-credentials.json');
 
@@ -20,3 +20,4 @@ describe('the GitHub API', () => {
       });
   });
 });
+*/

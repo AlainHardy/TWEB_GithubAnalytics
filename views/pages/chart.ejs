@@ -1,8 +1,9 @@
 <% include ../partials/header.ejs %>
 
 <% if (chartToDisplay == false) {%>
-    <h1>Choose a repository to get informations from</h1>
+    <h1>Search a repository to get some stats about it</h1>
 <% } else { %>
+    <h1><%= chosenRepo%></h1>
     <div class="card mb-3">
         <div class="card-header">
         <i class="fa fa-area-chart"></i>Commit per Month</div>
@@ -71,7 +72,7 @@
             yAxes: [{
                 ticks: {
                 min: 0,
-                max: <%= chartData.highestValue %>,
+                max: <%= Math.ceil(chartData.highestValue/10)*10 ;%>,
                 maxTicksLimit: 5
                 },
                 gridLines: {
