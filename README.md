@@ -5,7 +5,7 @@ You have to use you own github credentials to the app. You have to add them to t
 ```JSON
 {
 	"username": "MyUsername",
-	"token": "MyToken";
+	"token": "MyToken"
 }
 ```
 ## Start the server
