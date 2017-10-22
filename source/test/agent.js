@@ -1,4 +1,4 @@
-/*const chai = require('chai');
+const chai = require('chai');
 const credentials = require('../github-credentials.json');
 const Agent = require('../src/agent.js');
 
@@ -25,4 +25,3 @@ describe('agent', () => {
     });
   });
 });
-*/

@@ -11,6 +11,7 @@ const app = express();
 let chartPageData = null;
 
 app.set('view engine', 'ejs');
+app.set('port', (process.env.PORT) || 3000);
 
 // Define where ressources are
 app.use(express.static(path.join(__dirname, '/static')));
@@ -50,5 +51,6 @@ app.post('/chart', (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(app.get('port'), () => {
+  console.log('Listen on port', app.get('port'));
 });
